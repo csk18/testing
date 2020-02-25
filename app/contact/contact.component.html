@@ -1,0 +1,26 @@
+<div class="contact-wrapper">
+  <h4>
+    {{ text }}
+  </h4>
+
+  <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <div class="control-wrapper">
+        <label class="center-block">Name:
+        </label>
+        <input class="form-control" formControlName="name">
+      </div>
+      <div class="control-wrapper">
+        <label class="center-block">Email:
+        </label>
+        <input class="form-control" formControlName="email">
+      </div>
+      <div class="control-wrapper">
+        <label class="center-block">Text:
+        </label>
+        <input class="form-control" formControlName="text">
+      </div>
+    </div>
+    <button type="submit" [disabled]="!contactForm.valid" class="btn btn-success">Save</button>
+  </form>
+</div>
